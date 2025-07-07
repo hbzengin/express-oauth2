@@ -57,7 +57,6 @@ export async function authenticateCallback(req: Request, res: Response) {
     let status: number;
 
     if (existing) {
-      // here TS knows you’ve asserted non-null
       user = (await userRepo.update(existing.id, newUser))!;
       status = 200;
     } else {
